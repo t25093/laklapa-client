@@ -1,0 +1,18 @@
+# הגדרות פריסה ל-Render (Blueprint) עבור ה-Client
+# אתר סטטי: Render בונה את הפרויקט ומגיש את תיקיית dist
+services:
+  - type: web
+    name: laklapa-client
+    runtime: static
+    branch: main
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    # כל כתובת (למשל /products/8) מחזירה את index.html, ו-React Router מציג את העמוד הנכון
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # כתובת השרת. Vite מכניס אותה לקוד בזמן הבנייה
+      - key: VITE_API_URL
+        value: https://laklapa-api.onrender.com

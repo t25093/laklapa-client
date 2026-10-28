@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* צבעי המותג, לפי הלוגו */
+@theme {
+  /* טורקיז: הכיתוב laklapa */
+  --color-brand-50: #e6f5f8;
+  --color-brand-100: #c2e7ef;
+  --color-brand-600: #0197b2;
+  --color-brand-700: #017c93;
+  --color-brand-800: #016274;
+
+  /* ורוד: הפרחים והכיתוב התחתון */
+  --color-blush-50: #fdf2f7;
+  --color-blush-100: #fce0eb;
+  --color-blush-200: #f9c6d9;
+  --color-blush-500: #f07ba8;
+  --color-blush-600: #d95c8d;
+}
