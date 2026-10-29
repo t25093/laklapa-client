@@ -8,6 +8,7 @@ import CatalogPage from "../pages/CatalogPage";
 import ProductPage from "../pages/ProductPage";
 import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
+import MyOrdersPage from "../pages/MyOrdersPage";
 
 const AppRoutes = () => {
     return <Routes>
@@ -18,7 +19,7 @@ const AppRoutes = () => {
             <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
             <Route path="/login" element={<LoginPage></LoginPage>}></Route>
             <Route element={<ProtectedRoute role="CUSTOMER"></ProtectedRoute>}>
-                <Route path="/orders" element={<div>ההזמנות שלי</div>}></Route>
+                <Route path="/orders" element={<MyOrdersPage></MyOrdersPage>}></Route>
                 <Route path="/cart" element={<CartPage></CartPage>}></Route>
                 <Route path="/checkout" element={<CheckoutPage></CheckoutPage>}></Route>
             </Route>

@@ -54,3 +54,14 @@ export interface CartItem {
   preferredColor: string
   notes: string
 }
+
+export interface OrderSummary {
+  id: number,
+  totalAmount: number,
+  itemsCount: number,
+  status: string,
+  deliveryMethod: string,
+  recipientName: string,
+  requestedDate: string,
+  createdAt: string
+}
