@@ -65,3 +65,28 @@ export interface OrderSummary {
   requestedDate: string,
   createdAt: string
 }
+
+export interface OrderItem {
+  id: number,
+  quantity: number,
+  unitPrice: number,
+  lineTotal: number,
+  preferredColor: string,
+  notes: string | null,
+  product: { id: number; name: string; imageUrl: string }
+}
+
+export interface Order extends OrderSummary {
+  deliveryAddress: string | null,
+  greetingText: string | null,
+  recipientPhone: string,
+  items: OrderItem[]
+}
+
+export interface ProductFormValues {
+  name: string,
+  description: string,
+  price: number,
+  imageUrl: string,
+  categoryId: number,
+}

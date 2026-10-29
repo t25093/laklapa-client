@@ -1,5 +1,5 @@
 import type { CheckoutFormValues } from "../components/cart/CheckoutForm";
-import type { CartItem, OrderSummary } from "../types";
+import type { CartItem, Order, OrderSummary } from "../types";
 import { apiRequest } from "./client";
 
 export interface CreateOrderData extends CheckoutFormValues {
@@ -20,4 +20,19 @@ export async function getMyOrders(token: string): Promise<OrderSummary[]> {
         token
     })
     return result.orders;
+}
+
+export async function getOrder(id: number, token: string): Promise<Order> {
+    const result = await apiRequest<{ order: Order }>(`/api/orders/${id}`, {
+        token
+    })
+    return result.order;
+}
+
+export async function cancelOrder(id: number, token: string): Promise<Order> {
+    const result = await apiRequest<{ order: Order }>(`/api/orders/${id}/cancel`, {
+        method:"PATCH",
+        token
+    })
+    return result.order;
 }   
