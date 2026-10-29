@@ -6,7 +6,7 @@ export interface CreateOrderData extends CheckoutFormValues {
     items: CartItem[]
 }
 
-export async function createOrder(data: CreateOrderData, token: string): Promise<{ id: number }> {
+export async function createOrder(data: CreateOrderData, token: string | null): Promise<{ id: number }> {
     const result = await apiRequest<{ order: { id: number } }>("/api/orders", {
         method: "POST",
         body: data,
