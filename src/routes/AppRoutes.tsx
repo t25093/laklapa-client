@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import LoginPage from "../components/LoginPage";
+import LoginPage from "../pages/LoginPage";
 import Layout from "../components/layout/Layout";
 import CartPage from "../pages/CartPage";
 import CatalogPage from "../pages/CatalogPage";

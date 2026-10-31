@@ -1,7 +1,7 @@
-import FormField from "./form/FormField"
+import FormField from "../form/FormField"
 import { useForm } from "react-hook-form"
-import Button from "./common/Button"
-import { EMAIL_PATTERN } from "../utils/patterns"
+import Button from "../common/Button"
+import { EMAIL_PATTERN } from "../../utils/patterns"
 
 export interface LoginFormValues {
     email: string,

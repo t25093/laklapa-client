@@ -1,5 +1,5 @@
 import type { OrderItem } from "../../types";
-import { COLOR_OPTIONS } from "../../utils/constants";
+import { COLOR_OPTIONS, getOptionLabel } from "../../utils/constants";
 import PriceTag from "../common/PriceTag";
 
 interface OrderItemsTableProp {
@@ -24,7 +24,7 @@ const OrderItemsTable = ({ items }: OrderItemsTableProp) => {
                         {item.product.name}
                         {item.notes && <p className="text-sm text-gray-500">{item.notes}</p>}
                     </td>
-                    <td className="p-2 border-b">{COLOR_OPTIONS.find((color) => color.value === item.preferredColor)?.label}</td>
+                    <td className="p-2 border-b">{getOptionLabel(COLOR_OPTIONS,item.preferredColor)}</td>
                     <td className="p-2 border-b">{item.quantity}</td>
                     <td className="p-2 border-b"><PriceTag price={item.unitPrice}></PriceTag></td>
                     <td className="p-2 border-b"><PriceTag price={item.lineTotal}></PriceTag></td>

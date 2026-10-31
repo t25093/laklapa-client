@@ -19,3 +19,7 @@ export const STATUS_OPTIONS = [
     { value: "DELIVERED", label: "נמסרה" },
     { value: "CANCELLED", label: "בוטלה" }
 ]
+
+export function getOptionLabel(options: { value: string; label: string }[], value: string) {
+    return options.find((option)=> option.value=== value)?.label ?? value;
+}

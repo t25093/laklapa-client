@@ -1,6 +1,6 @@
 import { useCart } from "../../context/CartContext";
 import type { CartItem } from "../../types";
-import { COLOR_OPTIONS } from "../../utils/constants";
+import { COLOR_OPTIONS, getOptionLabel } from "../../utils/constants";
 import Button from "../common/Button";
 import PriceTag from "../common/PriceTag";
 
@@ -14,7 +14,7 @@ const CartItemRow = ({ item }: CartItemRowProp) => {
     return <div className="flex justify-between items-center border-b py-4">
         <div className="flex flex-col gap-1">
             <p className="font-semibold">שם: {item.name}</p>
-            <p className="text-sm text-gray-500">{COLOR_OPTIONS.find((color) => color.value === item.preferredColor)?.label}</p>
+            <p className="text-sm text-gray-500">{getOptionLabel(COLOR_OPTIONS,item.preferredColor)}</p>
             {item.notes && <p className="text-sm text-gray-500">הערות: {item.notes}</p>}
         </div>
         {/* <img src={item.imageUrl} alt={item.name} /> */}

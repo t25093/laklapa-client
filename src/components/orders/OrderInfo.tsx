@@ -1,5 +1,5 @@
 import type { Order } from "../../types"
-import { DELIVERY_OPTIONS } from "../../utils/constants"
+import { DELIVERY_OPTIONS, getOptionLabel } from "../../utils/constants"
 import PriceTag from "../common/PriceTag"
 import StatusBadge from "./StatusBadge"
 
@@ -8,7 +8,7 @@ interface OrderInfoProp {
 }
 
 const OrderInfo = ({ order }: OrderInfoProp) => {
-    const deliveryLabel = DELIVERY_OPTIONS.find((option) => option.value === order.deliveryMethod)?.label
+    const deliveryLabel = getOptionLabel(DELIVERY_OPTIONS,order.deliveryMethod)
 
     return <div className="p-4 border rounded-xl flex flex-col gap-2">
         <p><span className="font-semibold">סטטוס: </span><StatusBadge status={order.status} /></p>

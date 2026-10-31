@@ -1,4 +1,4 @@
-import { STATUS_OPTIONS } from "../../utils/constants";
+import { getOptionLabel, STATUS_OPTIONS } from "../../utils/constants";
 
 interface StatusBadgeProp {
     status: string
@@ -13,7 +13,7 @@ const STATUS_STYLES: Record<string, string> = {
 }
 
 const StatusBadge = ({ status }: StatusBadgeProp) => {
-    const label =  STATUS_OPTIONS.find((option) => option.value === status)?.label 
+    const label =  getOptionLabel(STATUS_OPTIONS, status)
     return <span className={`${STATUS_STYLES[status]} px-2 py-1 rounded-full text-xs font-semibold`}>
         {label}
     </span>
