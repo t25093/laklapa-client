@@ -12,6 +12,8 @@ import RegisterPage from "../pages/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
 import ProductsAdminPage from "../pages/ProductsAdminPage";
 import ProductFormPage from "../pages/ProductFormPage";
+import OrdersAdminPage from "../pages/OrdersAdminPage";
+import AdminOrderDetailsPage from "../pages/AdminOrderDetailsPage";
 
 const AppRoutes = () => {
     return <Routes>
@@ -28,7 +30,8 @@ const AppRoutes = () => {
                 <Route path="/orders/:id" element={<OrderDetailsPage></OrderDetailsPage>}></Route>
             </Route>
             <Route element={<ProtectedRoute role="ADMIN"></ProtectedRoute>}>
-                <Route path="/admin/orders" element={<div>ניהול הזמנות</div>}></Route>
+                <Route path="/admin/orders" element={<OrdersAdminPage></OrdersAdminPage>}></Route>
+                <Route path="/admin/orders/:id" element={<AdminOrderDetailsPage></AdminOrderDetailsPage>}></Route>
                 <Route path="/admin/products" element={<ProductsAdminPage></ProductsAdminPage>}></Route>
                 <Route path="/admin/products/:id/edit" element={<ProductFormPage></ProductFormPage>}></Route>
                 <Route path="/admin/products/new" element={<ProductFormPage></ProductFormPage>}></Route>

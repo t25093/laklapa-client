@@ -31,8 +31,24 @@ export async function getOrder(id: number, token: string): Promise<Order> {
 
 export async function cancelOrder(id: number, token: string): Promise<Order> {
     const result = await apiRequest<{ order: Order }>(`/api/orders/${id}/cancel`, {
-        method:"PATCH",
+        method: "PATCH",
         token
     })
     return result.order;
-}   
+}
+
+export async function getAllOrders(token: string): Promise<OrderSummary[]> {
+    const result = await apiRequest<{ orders: OrderSummary[] }>("/api/orders", {
+        token
+    })
+    return result.orders;
+}
+
+export async function updateOrderStatus(id: number, status:string, token: string): Promise<Order> {
+    const result = await apiRequest<{ order: Order }>(`/api/orders/${id}/status`, {
+        method: "PATCH",
+        body: { status },
+        token
+    })
+    return result.order;
+}  

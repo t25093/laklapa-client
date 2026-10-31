@@ -4,11 +4,12 @@ import PriceTag from "../common/PriceTag";
 import StatusBadge from "./StatusBadge";
 
 interface OrderSummaryRowProp {
-    order: OrderSummary
+    order: OrderSummary,
+     basePath?:string
 }
 
-const OrderSummaryRow = ({ order }: OrderSummaryRowProp) => {
-    return <Link to={`/orders/${order.id}`} className="flex justify-between items-center border-b py-4 hover:bg-blush-50">
+const OrderSummaryRow = ({basePath="/orders", order }: OrderSummaryRowProp) => {
+    return <Link to={`${basePath}/${order.id}`} className="flex justify-between items-center border-b py-4 hover:bg-blush-50">
         <div className="flex flex-col gap-1">
             <p className="font-semibold">הזמנה # {order.id}</p>
             <p className="text-sm text-gray-500">למסירה ב- {order.requestedDate}</p>

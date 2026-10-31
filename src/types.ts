@@ -81,6 +81,7 @@ export interface Order extends OrderSummary {
   greetingText: string | null,
   recipientPhone: string,
   items: OrderItem[]
+  customer?: { id: number, fullName: string, email: string, phone: string }
 }
 
 export interface ProductFormValues {
@@ -90,3 +91,4 @@ export interface ProductFormValues {
   imageUrl: string,
   categoryId: number,
 }
+

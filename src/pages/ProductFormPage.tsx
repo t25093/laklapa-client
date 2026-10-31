@@ -18,7 +18,7 @@ const ProductFormPage = () => {
     const isEdit = id !== undefined
     const { data: categories, isPending: categoriesPending, error: categoriesError } = useQuery({
         queryKey: ["categories"],
-        queryFn: () => { return getCategories() },
+        queryFn: () => { return getCategories() }
     });
 
     const { data: product, isPending: productPending, error: productError } = useQuery({
@@ -46,6 +46,7 @@ const ProductFormPage = () => {
                 : createProduct(values, token ?? ""),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["products"] });
+            queryClient.invalidateQueries({ queryKey: ["product", productId] });
             navigate("/admin/products");
         },
     });
