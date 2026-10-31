@@ -37,10 +37,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     function addItem(itemNew: CartItem) {
         const existingItem = items.find((item) => (item.productId === itemNew.productId && item.preferredColor === itemNew.preferredColor))
-        if (existingItem !== undefined && existingItem.notes === itemNew.notes) {
+        if (existingItem !== undefined) {
             if ((itemNew.quantity + existingItem.quantity) > 20)
                 updateQuantity(itemNew.productId, itemNew.preferredColor, 20)
-            updateQuantity(itemNew.productId, itemNew.preferredColor, itemNew.quantity + existingItem.quantity)
+            else
+                updateQuantity(itemNew.productId, itemNew.preferredColor, itemNew.quantity + existingItem.quantity)
         }
         else
             setItems([itemNew, ...items])
