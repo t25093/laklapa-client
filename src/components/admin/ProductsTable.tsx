@@ -7,7 +7,8 @@ interface ProductsTableProp {
 }
 
 const ProductsTable = ({ products }: ProductsTableProp) => {
-    return <table className="w-full text-right border-collapse">
+    return <div className="overflow-x-auto">
+        <table className="w-full text-right border-collapse">
         <thead>
             <tr>
                 <th className="p-2 border-b bg-blush-50 font-semibold">תמונה</th>
@@ -21,6 +22,7 @@ const ProductsTable = ({ products }: ProductsTableProp) => {
             {products.map((product)=><ProductRow key={product.id} product={product}></ProductRow>)}
         </tbody>
     </table>
+    </div>
 }
 
 export default ProductsTable;

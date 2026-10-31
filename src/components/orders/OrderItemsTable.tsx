@@ -7,7 +7,8 @@ interface OrderItemsTableProp {
 }
 
 const OrderItemsTable = ({ items }: OrderItemsTableProp) => {
-    return <table className="w-full text-right border-collapse">
+    return <div className="overflow-x-auto">
+        <table className="w-full text-right border-collapse">
         <thead>
             <tr>
                 <th className="p-2 border-b bg-blush-50 font-semibold">מוצר</th>
@@ -32,6 +33,7 @@ const OrderItemsTable = ({ items }: OrderItemsTableProp) => {
             )}
         </tbody>
     </table>
+    </div>
 }
 
 export default OrderItemsTable;

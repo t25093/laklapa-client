@@ -16,7 +16,7 @@ const NavBar = () => {
             return <AdminLinks></AdminLinks>
         return <CustomerLinks></CustomerLinks>
     }
-    return <nav className="flex gap-4 items-center">{links()}<UserMenu></UserMenu></nav>
+    return <nav className="flex-wrap flex gap-4 items-center">{links()}<UserMenu></UserMenu></nav>
 }
 
 export default NavBar;
