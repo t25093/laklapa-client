@@ -1,10 +1,14 @@
+import sprig from "../../assets/sprig.svg";
 
 interface PageTitleProp{
     children: React.ReactNode
 }
 
 const PageTitle = ({children}:PageTitleProp) => {
-    return <h1 className="inline-block font-display text-3xl font-medium text-brand-800 mb-6 px-1 bg-[linear-gradient(transparent_72%,var(--color-blush-100)_72%)]">{children}</h1>
+    return <div className="flex items-center gap-2 mb-6">
+        <img className="w-10 h-10" src={sprig} alt="" />
+        <h1 className="font-display text-3xl font-medium text-brand-800">{children}</h1>
+    </div>
 }
 
 export default PageTitle;

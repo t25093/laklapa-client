@@ -1,3 +1,4 @@
+import Icon from "../components/common/Icon";
 import Loader from "../components/common/Loader";
 import PageTitle from "../components/common/PageTitle";
 import ProductGrid from "../components/products/ProductGrid";
@@ -45,7 +46,7 @@ const CatalogPage = () => {
     }
 
     return <>
-        {message && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-full bg-white border border-brand-100 px-6 py-3 text-brand-800 shadow-soft">✓ <span>{message} נוסף לסל 🌸</span>
+        {message && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-full bg-white border border-brand-100 px-6 py-3 text-brand-800 shadow-soft"><Icon name="check" className="w-5 h-5 text-brand-600" /><span>{message} נוסף לסל</span>
             <Link to="/cart" className="ms-auto text-sm text-brand-600 hover:underline">לסל ←</Link></div>}
         <section className="mb-12 grid items-center gap-6 md:grid-cols-[1.3fr_1fr] rounded-[2rem] border border-blush-100 shadow-soft p-8 md:p-12 bg-[radial-gradient(circle_at_85%_20%,var(--color-blush-100)_0%,transparent_45%),radial-gradient(circle_at_10%_90%,var(--color-brand-50)_0%,transparent_50%),#ffffff]">
             <div className="flex flex-col gap-4">
@@ -53,9 +54,9 @@ const CatalogPage = () => {
                 <h1 className="font-hand text-5xl md:text-7xl leading-tight text-brand-800">שוזרת פרח שמדבר</h1>
                 <p className="text-lg text-gray-600 max-w-md">זרים ומארזים שנשזרים ביד, באהבה ובפרטים הקטנים. לכל רגע שמגיע לו פרח.</p>
                 <div className="flex flex-wrap gap-2 pt-2 text-sm">
-                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card">🌷 עבודת יד</span>
-                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card">🚚 משלוח עד הבית</span>
-                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card">💌 כרטיס ברכה אישי</span>
+                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card"><Icon name="flower" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />עבודת יד</span>
+                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card"><Icon name="truck" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />משלוח עד הבית</span>
+                    <span className="px-4 py-1.5 rounded-full bg-white border border-blush-100 shadow-card"><Icon name="envelope" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />כרטיס ברכה אישי</span>
                 </div>
             </div>
             <img className="w-56 md:w-72 justify-self-center" src={bouquet} alt="" />

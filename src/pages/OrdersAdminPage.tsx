@@ -7,6 +7,7 @@ import PageTitle from "../components/common/PageTitle";
 import OrdersList from "../components/orders/OrdersList";
 import { useAuth } from "../context/AuthContext";
 import { errorMessage } from "../utils/errors";
+import divider from "../assets/floral-divider.svg";
 
 const OrdersAdminPage = () => {
     const { token } = useAuth()
@@ -25,6 +26,8 @@ const OrdersAdminPage = () => {
 
     return <>
         <PageTitle>ניהול הזמנות</PageTitle>
+        <p className="-mt-3 mb-2 text-gray-500">כל ההזמנות של הסטודיו במקום אחד</p>
+        <img className="mb-8 w-48" src={divider} alt="" />
         {content()}
     </>
 }

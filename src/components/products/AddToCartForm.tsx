@@ -27,7 +27,7 @@ const AddToCartForm = ({ onSubmit }: AddToCartFormProp) => {
         <SelectField id="colorId" label="צבע מועדף" options={COLOR_OPTIONS} registration={register("preferredColor", { required: "חובה לבחור צבע מועדף" })}  error={errors.preferredColor?.message}></SelectField>
         </div>
         <TextAreaField id="notesId" label="הערות (לא חובה)" registration={register("notes",{ maxLength: { value: 300, message: "עד 300 תווים" }})} error={errors.notes?.message}></TextAreaField>
-        <Button type="submit" fullWidth>הוספה לסל 🛒</Button>
+        <Button type="submit" fullWidth>הוספה לסל</Button>
     </form>
 }
 

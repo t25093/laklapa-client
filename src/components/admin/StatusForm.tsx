@@ -19,9 +19,10 @@ const StatusForm = ({ onSubmit, currentStatus, isPending }: StatusFormProp) => {
         defaultValues: {status:currentStatus },
     })
 
-    return <form className="flex gap-2 items-end" noValidate onSubmit={handleSubmit(onSubmit)}>
+    return <form className="flex flex-wrap gap-3 items-end" noValidate onSubmit={handleSubmit(onSubmit)}>
         <SelectField id="statusId" label="שינוי סטטוס" options={STATUS_OPTIONS} registration={register("status", { required: "חובה לבחור סטטוס" })} error={errors.status?.message}></SelectField>
-<Button type="submit" disabled={isPending}>{isPending ?"...מעדכנת": "עדכון סטטוס" }</Button>    </form>
+        <Button type="submit" disabled={isPending}>{isPending ? "מעדכנת..." : "עדכון סטטוס"}</Button>
+    </form>
 }
 
 export default StatusForm

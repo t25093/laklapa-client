@@ -7,6 +7,7 @@ import { errorMessage } from "../utils/errors";
 import PageTitle from "../components/common/PageTitle";
 import OrdersList from "../components/orders/OrdersList";
 import ErrorMessage from "../components/common/ErrorMessage";
+import divider from "../assets/floral-divider.svg";
 
 const MyOrdersPage = () => {
     const { token } = useAuth()
@@ -25,6 +26,8 @@ const MyOrdersPage = () => {
 
     return <>
     <PageTitle>ההזמנות שלי</PageTitle>
+    <p className="-mt-3 mb-2 text-gray-500">כאן אפשר לעקוב אחרי כל הזרים שהזמנת</p>
+    <img className="mb-8 w-48" src={divider} alt="" />
     {content()}
     </>
 }

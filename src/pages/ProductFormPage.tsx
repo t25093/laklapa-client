@@ -1,3 +1,4 @@
+import Icon from "../components/common/Icon";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useParams } from "react-router"
 import ProductForm from "../components/admin/ProductForm"
@@ -68,11 +69,11 @@ const ProductFormPage = () => {
             </div>
             <aside className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 flex flex-col items-center gap-4 text-center">
                 <img className="w-44" src={vase} alt="" />
-                <p className="font-display text-xl text-brand-800">טיפים למוצר שנמכר ✨</p>
+                <p className="font-display text-xl text-brand-800">טיפים למוצר שנמכר</p>
                 <ul className="text-sm text-gray-600 flex flex-col gap-2 text-right">
-                    <li>📸 תמונה בהירה, על רקע נקי, באור יום</li>
-                    <li>✍️ תיאור שמספר מה בזר ולאיזה רגע הוא מתאים</li>
-                    <li>🏷️ קטגוריה מדויקת עוזרת ללקוחות למצוא אותו</li>
+                    <li><Icon name="camera" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />תמונה בהירה, על רקע נקי, באור יום</li>
+                    <li><Icon name="pencil" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />תיאור שמספר מה בזר ולאיזה רגע הוא מתאים</li>
+                    <li><Icon name="tag" className="inline-block w-4 h-4 align-[-0.2em] me-1.5 text-brand-600" />קטגוריה מדויקת עוזרת ללקוחות למצוא אותו</li>
                 </ul>
             </aside>
         </div>

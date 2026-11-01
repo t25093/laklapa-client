@@ -14,7 +14,7 @@ const STATUS_STYLES: Record<string, string> = {
 
 const StatusBadge = ({ status }: StatusBadgeProp) => {
     const label =  getOptionLabel(STATUS_OPTIONS, status)
-    return <span className={`${STATUS_STYLES[status]} px-2 py-1 rounded-full text-xs font-semibold`}>
+    return <span className={`${STATUS_STYLES[status]} px-3 py-1 rounded-full text-xs font-medium tracking-wide`}>
         {label}
     </span>
 }

@@ -1,4 +1,5 @@
-import { useParams } from "react-router";
+import Icon from "../components/common/Icon";
+import { Link, useParams } from "react-router";
 import { useAuth } from "../context/AuthContext";
 import { useQuery } from "@tanstack/react-query";
 import { getOrder } from "../api/orders";
@@ -26,11 +27,16 @@ const OrderDetailsPage = () => {
         if (error) return <ErrorMessage message={errorMessage(error)} />;
         else return <div className="flex flex-col gap-6">
             <OrderInfo order={order}></OrderInfo>
+            <p className="font-display text-xl text-brand-800"><Icon name="flower" className="inline-block w-5 h-5 align-[-0.2em] me-1.5 text-brand-600" />מה בהזמנה</p>
             <OrderItemsTable items={order.items}></OrderItemsTable>
-            {order.status === "RECEIVED" && <CancelOrderButton orderId={order.id}></CancelOrderButton>}
+            {order.status === "RECEIVED" && <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-5 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-gray-600">אפשר לבטל את ההזמנה עד שהיא נכנסת להכנה</p>
+                <CancelOrderButton orderId={order.id}></CancelOrderButton>
+            </div>}
         </div>
     }
     return <>
+        <Link to="/orders" className="block mb-4 text-sm text-brand-600 hover:underline">→ לכל ההזמנות</Link>
         <PageTitle>הזמנה #{orderId}</PageTitle>
         {content()}
     </>

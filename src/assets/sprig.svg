@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- ענף קטן ליד כותרות הדפים -->
+  <path d="M10 42 C16 34 22 24 34 10" stroke="#017c93" stroke-width="1.6" stroke-linecap="round" />
+  <ellipse cx="17" cy="31" rx="6" ry="2.6" fill="#e6f5f8" stroke="#017c93" stroke-width="1.2" transform="rotate(-70 17 31)" />
+  <ellipse cx="25" cy="27" rx="6" ry="2.6" fill="#e6f5f8" stroke="#017c93" stroke-width="1.2" transform="rotate(20 25 27)" />
+  <ellipse cx="23" cy="19" rx="5" ry="2.2" fill="#e6f5f8" stroke="#017c93" stroke-width="1.2" transform="rotate(-75 23 19)" />
+  <g transform="translate(35 10)" fill="#fce0eb" stroke="#d95c8d" stroke-width="1.1">
+    <ellipse cx="0" cy="-4.5" rx="3" ry="4.5" />
+    <ellipse cx="0" cy="-4.5" rx="3" ry="4.5" transform="rotate(72)" />
+    <ellipse cx="0" cy="-4.5" rx="3" ry="4.5" transform="rotate(144)" />
+    <ellipse cx="0" cy="-4.5" rx="3" ry="4.5" transform="rotate(216)" />
+    <ellipse cx="0" cy="-4.5" rx="3" ry="4.5" transform="rotate(288)" />
+    <circle r="2" fill="#f07ba8" />
+  </g>
+</svg>

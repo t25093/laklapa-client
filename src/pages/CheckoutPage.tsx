@@ -1,3 +1,4 @@
+import corner from "../assets/floral-corner.svg";
 import { useNavigate } from "react-router";
 import CheckoutCartSummary from "../components/cart/CheckoutCartSummary";
 import CheckoutForm, { type CheckoutFormValues } from "../components/cart/CheckoutForm";
@@ -36,12 +37,13 @@ const CheckoutPage = () => {
                         <CheckoutCartSummary items={items}></CheckoutCartSummary>
                         <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 flex flex-col items-center gap-3 text-center">
                             <img className="w-40" src={giftBouquet} alt="" />
-                            <p className="font-display text-xl text-brand-800">עוד רגע הזר שלך בדרך 💐</p>
+                            <p className="font-display text-xl text-brand-800">עוד רגע הזר שלך בדרך</p>
                             <p className="text-sm text-gray-500">כל זר נשזר ביד ביום המסירה, נעטף בנייר עדין ומגיע עם כרטיס ברכה אישי.</p>
                         </div>
                     </div>
-                    <div className="rounded-[2rem] bg-white border border-blush-100 shadow-soft p-6 md:p-8">
-                        <p className="font-display text-2xl text-brand-800 mb-1">פרטי המסירה 🌷</p>
+                    <div className="relative overflow-hidden rounded-[2rem] bg-white border border-blush-100 shadow-soft p-6 md:p-8">
+                        <img className="pointer-events-none absolute -top-3 -left-3 w-24 opacity-50" src={corner} alt="" />
+                        <p className="font-display text-2xl text-brand-800 mb-1">פרטי המסירה</p>
                         <p className="text-sm text-gray-500 mb-6">למי הזר, לאן ומתי</p>
                         <CheckoutForm isPending={isPending} onSubmit={(values) => mutate(values)}></CheckoutForm>
                     </div>
