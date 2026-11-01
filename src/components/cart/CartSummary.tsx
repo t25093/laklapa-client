@@ -12,7 +12,7 @@ const CartSummary = ({ items }: CartSummaryProp) => {
 
     const navigate = useNavigate()
 
-    return <div className="mt-6 p-4 border rounded-xl bg-blush-50 flex flex-col gap-4">
+    return <div className="mt-6 p-5 rounded-3xl bg-blush-50 border border-blush-100 shadow-card flex flex-col gap-4">
         <div className="flex justify-between">
             <span>סה"כ לתשלום:</span>
             <PriceTag price={getCartTotal(items)}></PriceTag>

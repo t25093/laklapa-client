@@ -11,7 +11,7 @@ interface CartItemRowProp {
 const CartItemRow = ({ item }: CartItemRowProp) => {
     const { removeItem, updateQuantity } = useCart()
 
-    return <div className="flex justify-between items-center border-b py-4">
+    return <div className="flex justify-between items-center border-b border-blush-100 py-4">
         <div className="flex flex-col gap-1">
             <p className="font-semibold">שם: {item.name}</p>
             <p className="text-sm text-gray-500">{getOptionLabel(COLOR_OPTIONS,item.preferredColor)}</p>

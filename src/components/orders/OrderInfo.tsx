@@ -10,7 +10,7 @@ interface OrderInfoProp {
 const OrderInfo = ({ order }: OrderInfoProp) => {
     const deliveryLabel = getOptionLabel(DELIVERY_OPTIONS,order.deliveryMethod)
 
-    return <div className="p-4 border rounded-xl flex flex-col gap-2">
+    return <div className="p-5 rounded-3xl bg-white border border-blush-100 shadow-card flex flex-col gap-2">
         <p><span className="font-semibold">סטטוס: </span><StatusBadge status={order.status} /></p>
         <p><span className="font-semibold">אופן הקבלה: </span>{deliveryLabel}</p>
         {order.deliveryAddress && <p><span className="font-semibold">כתובת: </span>{order.deliveryAddress}</p>}

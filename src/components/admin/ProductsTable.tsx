@@ -7,15 +7,15 @@ interface ProductsTableProp {
 }
 
 const ProductsTable = ({ products }: ProductsTableProp) => {
-    return <div className="overflow-x-auto">
+    return <div className="overflow-x-auto rounded-2xl bg-white border border-blush-100 shadow-card">
         <table className="w-full text-right border-collapse">
         <thead>
             <tr>
-                <th className="p-2 border-b bg-blush-50 font-semibold">תמונה</th>
-                <th className="p-2 border-b bg-blush-50 font-semibold">שם</th>
-                <th className="p-2 border-b bg-blush-50 font-semibold">קטגוריה</th>
-                <th className="p-2 border-b bg-blush-50 font-semibold">מחיר</th>
-                <th className="p-2 border-b bg-blush-50 font-semibold">פעולות</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">תמונה</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">שם</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">קטגוריה</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">מחיר</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">פעולות</th>
             </tr>
         </thead>
         <tbody>

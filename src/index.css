@@ -15,4 +15,24 @@
   --color-blush-200: #f9c6d9;
   --color-blush-500: #f07ba8;
   --color-blush-600: #d95c8d;
+
+  /* גופנים: סריף אלגנטי לכותרת הראשית ולכותרות, נקי ודק לטקסט ולכפתורים */
+  --font-hand: "Bellefair", "Frank Ruhl Libre", serif;
+  --font-display: "Frank Ruhl Libre", "David", serif;
+  --font-brand: "Heebo", system-ui, sans-serif;
+  --font-sans: "Heebo", system-ui, "Segoe UI", Arial, sans-serif;
+
+  /* צללים רכים בגוון ורוד־טורקיז, בלי קווי מתאר כבדים */
+  --shadow-card: 0 2px 12px rgb(217 92 141 / 0.08);
+  --shadow-soft: 0 18px 40px rgb(1 98 116 / 0.12);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    color: #3b3340;
+    background: linear-gradient(180deg, var(--color-blush-50) 0%, #ffffff 30%, #ffffff 70%, var(--color-brand-50) 100%);
+    background-attachment: fixed;
+  }
 }

@@ -7,7 +7,7 @@ interface OrderListProp {
 }
 
 const OrdersList = ({basePath, orders }: OrderListProp) => {
-    return <div>
+    return <div className="flex flex-col gap-3">
         {orders.map((order)=><OrderSummaryRow basePath={basePath} order={order} key={order.id} />)}
     </div>
 }

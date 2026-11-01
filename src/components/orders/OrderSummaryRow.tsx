@@ -9,7 +9,7 @@ interface OrderSummaryRowProp {
 }
 
 const OrderSummaryRow = ({basePath="/orders", order }: OrderSummaryRowProp) => {
-    return <Link to={`${basePath}/${order.id}`} className="flex justify-between items-center border-b py-4 hover:bg-blush-50">
+    return <Link to={`${basePath}/${order.id}`} className="flex justify-between items-center gap-4 rounded-2xl bg-white p-4 border border-blush-100 shadow-card transition hover:-translate-y-0.5 hover:bg-blush-50">
         <div className="flex flex-col gap-1">
             <p className="font-semibold">הזמנה # {order.id}</p>
             <p className="text-sm text-gray-500">למסירה ב- {order.requestedDate}</p>

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { getProduct } from "../api/products";
 import ErrorMessage from "../components/common/ErrorMessage";
 import Loader from "../components/common/Loader";
@@ -13,6 +13,7 @@ import { useAuth } from "../context/AuthContext";
 const ProductPage = () => {
     const {user}=useAuth();
     const { id } = useParams();
+    const navigate=useNavigate()
     const { addItem } = useCart();
     const productId = Number(id)
     const { data: product, isPending, error } = useQuery({
@@ -23,10 +24,17 @@ const ProductPage = () => {
     const content = () => {
         if (isPending) return <Loader />;
         if (error) return <ErrorMessage message={errorMessage(error)} />;
-        else return <>
-            <ProductDetails product={product}></ProductDetails>
-            {user?.role==="CUSTOMER" && <AddToCartForm onSubmit={(values) => addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, ...values })}></AddToCartForm>}
-        </>
+        else return <ProductDetails product={product}>
+            {user?.role === "CUSTOMER" && <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 flex flex-col gap-4">
+                <p className="font-display text-xl text-brand-800">להוסיף לסל 🛒</p>
+                <AddToCartForm onSubmit={(values) => {addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, ...values });
+            navigate("/")}}></AddToCartForm>
+            </div>}
+            {!user && <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 text-center flex flex-col gap-2">
+                <p className="font-display text-xl text-brand-800">אהבת את הזר? ✨</p>
+                <p className="text-sm text-gray-600"><Link className="text-brand-600 hover:underline" to="/login">התחברי</Link> או <Link className="text-brand-600 hover:underline" to="/register">הירשמי</Link> כדי להזמין</p>
+            </div>}
+        </ProductDetails>
     }
     return <>
         <PageTitle>{product?.name}</PageTitle>

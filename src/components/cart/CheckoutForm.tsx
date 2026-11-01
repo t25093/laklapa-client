@@ -26,7 +26,7 @@ const CheckoutForm = ({ onSubmit, isPending }: CheckoutFormProp) => {
         defaultValues: { deliveryMethod: "DELIVERY", deliveryAddress: "", greetingText: "", recipientName: "", recipientPhone: "", requestedDate: "" },
     })
     const deliveryMethodWatch = watch("deliveryMethod");
-    return <form className="flex flex-col gap-4 max-w-sm" noValidate onSubmit={handleSubmit(onSubmit)}>
+    return <form className="flex flex-col gap-5" noValidate onSubmit={handleSubmit(onSubmit)}>
         <FormField id="recipientNameId" label="שם המקבל/ת" registration={register("recipientName", { required: "שם המקבל/ת שדה חובה", maxLength: { value: 60, message: "עד 60 תווים" }, minLength: { value: 2, message: "לפחות 2 תווים" } })} error={errors.recipientName?.message}></FormField>
         <FormField id="recipientPhoneId" type="tel" label="טלפון המקבל/ת" registration={register("recipientPhone", { required: "חובה", pattern: { value: PHONE_PATTERN, message: "מספר טלפון לא תקין" } })} error={errors.recipientPhone?.message}></FormField>
         <SelectField id="deliveryMethodId" label="אופן הקבלה" options={DELIVERY_OPTIONS} registration={register("deliveryMethod",{required:"חובה לבחור את אופן השליחה"})} error={errors.deliveryMethod?.message}></SelectField>

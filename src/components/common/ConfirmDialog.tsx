@@ -9,8 +9,8 @@ interface ConfirmDialogProp {
 }
 
 const ConfirmDialog = ({ isPending, message, onCancel, onConfirm, confirmText = "כן, לבטל" }: ConfirmDialogProp) => {
-    return <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-        <div className="bg-white rounded-xl p-6 flex flex-col gap-4 max-w-sm w-full mx-4">
+    return <div className="fixed inset-0 bg-brand-800/25 backdrop-blur-sm flex items-center justify-center z-50">
+        <div className="bg-white rounded-3xl p-6 border border-blush-100 shadow-soft flex flex-col gap-4 max-w-sm w-full mx-4">
             <p>{message}</p>
             <div className="flex gap-2 justify-end">
                 <Button disabled={isPending} onClick={onConfirm} variant="danger" >{confirmText}</Button>

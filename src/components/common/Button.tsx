@@ -8,11 +8,11 @@ interface ButtonProps {
 }
 
 
-const base = "px-4 py-2 rounded-lg font-semibold transition"
+const base = "px-6 py-2.5 rounded-full font-brand font-medium tracking-wide transition duration-300 hover:-translate-y-0.5 hover:shadow-soft active:translate-y-0"
 
 const style = {
-    primary: "bg-brand-600 text-white hover:bg-brand-700",
-    secondary: "bg-white text-brand-600 border border-brand-600 hover:bg-brand-50",
+    primary: "bg-brand-600 text-white shadow-card hover:bg-brand-700",
+    secondary: "bg-white text-brand-700 border border-brand-100 hover:border-brand-600",
     danger: "bg-red-600 text-white hover:bg-red-700"
 }
 

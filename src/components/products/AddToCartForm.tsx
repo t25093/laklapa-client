@@ -21,11 +21,13 @@ const AddToCartForm = ({ onSubmit }: AddToCartFormProp) => {
         defaultValues: { quantity: 1, preferredColor: "MIXED", notes: "" },
     })
 
-    return <form className="flex flex-col gap-4 max-w-sm" noValidate onSubmit={handleSubmit(onSubmit)}>
+    return <form className="flex flex-col gap-4" noValidate onSubmit={handleSubmit(onSubmit)}>
+        <div className="grid gap-4 grid-cols-2">
         <FormField id="quantityId" label="כמות" type="number" registration={register("quantity", { valueAsNumber: true, required: "חובה למלא כמות", min: { value:1, message:"כמות מינימלית היא 1"}, max: { value:20, message:"כמות מקסימלית היא 20"} })} error={errors.quantity?.message}></FormField>
         <SelectField id="colorId" label="צבע מועדף" options={COLOR_OPTIONS} registration={register("preferredColor", { required: "חובה לבחור צבע מועדף" })}  error={errors.preferredColor?.message}></SelectField>
+        </div>
         <TextAreaField id="notesId" label="הערות (לא חובה)" registration={register("notes",{ maxLength: { value: 300, message: "עד 300 תווים" }})} error={errors.notes?.message}></TextAreaField>
-        <Button type="submit">הוספה לסל</Button>
+        <Button type="submit" fullWidth>הוספה לסל 🛒</Button>
     </form>
 }
 

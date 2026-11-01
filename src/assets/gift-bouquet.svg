@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" fill="none">
+  <!-- זר עטוף בנייר עם סרט: איור לדף השלמת ההזמנה -->
+  <g fill="#e6f5f8" stroke="#017c93" stroke-width="1.4">
+    <ellipse cx="98" cy="78" rx="18" ry="7" transform="rotate(-40 98 78)" />
+    <ellipse cx="164" cy="74" rx="18" ry="7" transform="rotate(38 164 74)" />
+    <ellipse cx="130" cy="50" rx="14" ry="6" transform="rotate(-85 130 50)" />
+  </g>
+  <g transform="translate(108 58)" fill="#fce0eb" stroke="#d95c8d" stroke-width="1.3">
+    <ellipse cx="0" cy="-12" rx="7" ry="12" />
+    <ellipse cx="0" cy="-12" rx="7" ry="12" transform="rotate(72)" />
+    <ellipse cx="0" cy="-12" rx="7" ry="12" transform="rotate(144)" />
+    <ellipse cx="0" cy="-12" rx="7" ry="12" transform="rotate(216)" />
+    <ellipse cx="0" cy="-12" rx="7" ry="12" transform="rotate(288)" />
+    <circle r="5" fill="#f07ba8" />
+  </g>
+  <g transform="translate(152 52)" fill="#fdf2f7" stroke="#d95c8d" stroke-width="1.3">
+    <ellipse cx="0" cy="-13" rx="7" ry="13" />
+    <ellipse cx="0" cy="-13" rx="7" ry="13" transform="rotate(60)" />
+    <ellipse cx="0" cy="-13" rx="7" ry="13" transform="rotate(120)" />
+    <ellipse cx="0" cy="-13" rx="7" ry="13" transform="rotate(180)" />
+    <ellipse cx="0" cy="-13" rx="7" ry="13" transform="rotate(240)" />
+    <ellipse cx="0" cy="-13" rx="7" ry="13" transform="rotate(300)" />
+    <circle r="5" fill="#f9c6d9" />
+  </g>
+  <g transform="translate(130 30)" stroke="#d95c8d" stroke-width="1.3">
+    <path d="M-11 0 C-13 -15 -6 -24 0 -27 C6 -24 13 -15 11 0 C7 6 -7 6 -11 0 Z" fill="#f9c6d9" />
+  </g>
+  <!-- נייר עטיפה -->
+  <path d="M70 92 L130 210 L190 92 C170 102 150 106 130 106 C110 106 90 102 70 92 Z" fill="#fdf2f7" stroke="#d95c8d" stroke-width="1.5" stroke-linejoin="round" />
+  <path d="M100 100 L130 210 L160 100" stroke="#f9c6d9" stroke-width="1.2" />
+  <!-- סרט -->
+  <g stroke="#017c93" stroke-width="1.5" fill="#c2e7ef">
+    <path d="M130 160 C112 146 96 150 100 162 C104 174 120 168 130 160 Z" />
+    <path d="M130 160 C148 146 164 150 160 162 C156 174 140 168 130 160 Z" />
+    <path d="M128 162 L118 192" fill="none" />
+    <path d="M132 162 L144 190" fill="none" />
+    <circle cx="130" cy="160" r="4.5" fill="#017c93" />
+  </g>
+  <!-- ניצוצות -->
+  <g fill="#f07ba8">
+    <circle cx="48" cy="60" r="2.4" />
+    <circle cx="214" cy="48" r="2" />
+    <circle cx="222" cy="138" r="2.6" />
+    <circle cx="40" cy="150" r="1.8" />
+  </g>
+  <path d="M60 30 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#f9c6d9" />
+  <path d="M206 96 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z" fill="#c2e7ef" />
+</svg>

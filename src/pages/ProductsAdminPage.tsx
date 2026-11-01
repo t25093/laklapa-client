@@ -24,7 +24,7 @@ const ProductsAdminPage = () => {
     return <>
         <div className="flex justify-between items-center">
             <PageTitle>ניהול מוצרים</PageTitle>
-            <Link className="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700" to="/admin/products/new">+ מוצר חדש</Link>
+            <Link className="px-6 py-2.5 rounded-full font-brand font-medium bg-brand-600 text-white shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-soft" to="/admin/products/new">+ מוצר חדש</Link>
         </div>
         {content()}
     </>

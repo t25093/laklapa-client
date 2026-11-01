@@ -8,10 +8,10 @@ interface CheckoutCartSummaryProp {
 }
 
 const CheckoutCartSummary = ({ items }: CheckoutCartSummaryProp) => {
-    return <div className="p-4 border rounded-xl bg-blush-50 flex flex-col gap-2">
-        <p className="font-semibold">סיכום הזמנה</p>
+    return <div className="rounded-[2rem] bg-white border border-blush-100 shadow-card p-6 flex flex-col gap-3">
+        <p className="font-display text-xl text-brand-800">🛍️ סיכום ההזמנה</p>
         <CartItemsList items={items}></CartItemsList>
-        <div className=" flex justify-between border-t pt-2 font-semibold">
+        <div className="flex justify-between border-t border-blush-100 pt-3 font-medium">
             <span>סה"כ:</span>
             <PriceTag price={getCartTotal(items)}></PriceTag>
         </div>
