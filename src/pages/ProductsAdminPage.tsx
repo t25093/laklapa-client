@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../api/products";
+import { getAdminProducts } from "../api/products";
+import { useAuth } from "../context/AuthContext";
 import Loader from "../components/common/Loader";
 import EmptyState from "../components/common/EmptyState";
 import ProductsTable from "../components/admin/ProductsTable";
@@ -9,9 +10,10 @@ import { errorMessage } from "../utils/errors";
 import { Link } from "react-router";
 
 const ProductsAdminPage = () => {
+    const { token } = useAuth()
     const { data: products, isPending, error } = useQuery({
-        queryKey: ["products"],
-        queryFn: () => getProducts()
+        queryKey: ["products", "admin"],
+        queryFn: () => getAdminProducts(token ?? "")
     });
 
     const content = () => {

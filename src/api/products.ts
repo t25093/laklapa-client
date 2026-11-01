@@ -31,3 +31,18 @@ export const updateProduct = async (id: number, data: ProductFormValues, token: 
     })
     return result.product
 }
+
+
+export const getAdminProducts = async (token: string) => {
+    const data = await apiRequest<{ products: Product[] }>("/api/products?includeInactive=true", { token })
+    return data.products
+}
+
+export const setProductActive = async (id: number, isActive: boolean, token: string) => {
+    const result = await apiRequest<{ product: Product }>(`/api/products/${id}`, {
+        method: "PUT",
+        token,
+        body: { isActive }
+    })
+    return result.product
+}

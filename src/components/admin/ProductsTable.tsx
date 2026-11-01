@@ -15,6 +15,7 @@ const ProductsTable = ({ products }: ProductsTableProp) => {
                 <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">שם</th>
                 <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">קטגוריה</th>
                 <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">מחיר</th>
+                <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">סטטוס</th>
                 <th className="p-2 border-b bg-blush-50 font-brand font-medium text-brand-800">פעולות</th>
             </tr>
         </thead>
