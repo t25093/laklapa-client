@@ -15,7 +15,7 @@ services:
     envVars:
       # כתובת השרת. Vite מכניס אותה לקוד בזמן הבנייה
       - key: VITE_API_URL
-        value: https://laklapa-api.onrender.com
+        value: https://laklapa-store-api.onrender.com
       - key: VITE_CLOUDINARY_CLOUD_NAME
         value: hklfghsz
       - key: VITE_CLOUDINARY_UPLOAD_PRESET
