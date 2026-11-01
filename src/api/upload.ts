@@ -13,5 +13,7 @@ export async function uploadImage(file: File): Promise<string> {
     if (!response.ok) throw new Error("העלאת התמונה נכשלה. נסי שוב");
 
     const data = await response.json();
-    return data.secure_url;                          
+    // הקישור נשמר עם דחיסה אוטומטית: פורמט חכם, איכות אוטומטית ורוחב עד 1200 פיקסלים.
+    // התמונה המקורית נשארת שמורה ב-Cloudinary בלי שינוי
+    return data.secure_url.replace("/image/upload/", "/image/upload/f_auto,q_auto,w_1200/");                          
 }
