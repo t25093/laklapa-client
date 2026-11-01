@@ -8,20 +8,31 @@ import ErrorMessage from "../components/common/ErrorMessage";
 import { getProducts } from "../api/products";
 import CategoryFilter from "../components/products/CategoryFilter";
 import { getCategories } from "../api/categories";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bouquet from "../assets/floral-bouquet.svg";
 import divider from "../assets/floral-divider.svg";
+import { Link, useLocation } from "react-router";
 
 
 const CatalogPage = () => {
     const [selectedCategoryId, setSelectedCategoryId] = useState<undefined | number>(undefined)
+    const location = useLocation()
+    const added = location.state?.added;
+
+    const [message, setMessage] = useState(added);
+
+    useEffect(() => {
+        if (!message) return;                               
+        const timer = setTimeout(() => setMessage(undefined), 3000);  
+        return () => clearTimeout(timer);                     
+    }, [message]);
 
     const { data: products, isPending, error } = useQuery({
-        queryKey: ["products",selectedCategoryId],
+        queryKey: ["products", selectedCategoryId],
         queryFn: () => { return getProducts(selectedCategoryId) },
     });
 
-    const { data: categories=[] } = useQuery({
+    const { data: categories = [] } = useQuery({
         queryKey: ["categories"],
         queryFn: () => { return getCategories() },
     });
@@ -34,6 +45,8 @@ const CatalogPage = () => {
     }
 
     return <>
+        {message && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-full bg-white border border-brand-100 px-6 py-3 text-brand-800 shadow-soft">✓ <span>{message} נוסף לסל 🌸</span>
+            <Link to="/cart" className="ms-auto text-sm text-brand-600 hover:underline">לסל ←</Link></div>}
         <section className="mb-12 grid items-center gap-6 md:grid-cols-[1.3fr_1fr] rounded-[2rem] border border-blush-100 shadow-soft p-8 md:p-12 bg-[radial-gradient(circle_at_85%_20%,var(--color-blush-100)_0%,transparent_45%),radial-gradient(circle_at_10%_90%,var(--color-brand-50)_0%,transparent_50%),#ffffff]">
             <div className="flex flex-col gap-4">
                 <p className="text-sm tracking-[0.3em] text-blush-600">✿ סטודיו לעיצוב פרחים ✿</p>

@@ -11,9 +11,9 @@ import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 
 const ProductPage = () => {
-    const {user}=useAuth();
+    const { user } = useAuth();
     const { id } = useParams();
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const { addItem } = useCart();
     const productId = Number(id)
     const { data: product, isPending, error } = useQuery({
@@ -27,8 +27,10 @@ const ProductPage = () => {
         else return <ProductDetails product={product}>
             {user?.role === "CUSTOMER" && <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 flex flex-col gap-4">
                 <p className="font-display text-xl text-brand-800">להוסיף לסל 🛒</p>
-                <AddToCartForm onSubmit={(values) => {addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, ...values });
-            navigate("/")}}></AddToCartForm>
+                <AddToCartForm onSubmit={(values) => {
+                    addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, ...values });
+                    navigate("/", { state: { added: product.name } })
+                }}></AddToCartForm>
             </div>}
             {!user && <div className="rounded-[2rem] bg-blush-50/60 border border-blush-100 p-6 text-center flex flex-col gap-2">
                 <p className="font-display text-xl text-brand-800">אהבת את הזר? ✨</p>
